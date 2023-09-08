@@ -1,0 +1,128 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    
+<script>
+    $(document).ready(function(){
+
+        $("#fadeIn").click(function(){
+           $("p").fadeIn(3000);
+        });        
+        $("#fadeOut").click(function(){
+            $("p").fadeOut();
+        });        
+        $("#fadeToggle").click(function(){
+            $("p").fadeToggle();
+        });        
+
+});
+</script>
+</head>
+<body>
+    <button id="fadeIn">fade in</button>
+    <button id="fadeOut">fade out</button>
+    <button id="fadeToggle">fade toggle</button>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla suscipit a blanditiis provident harum alias deserunt, possimus nihil veniam repellat esse rerum, rem, voluptatibus maiores culpa enim quaerat perferendis corporis?</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla suscipit a blanditiis provident harum alias deserunt, possimus nihil veniam repellat esse rerum, rem, voluptatibus maiores culpa enim quaerat perferendis corporis?</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla suscipit a blanditiis provident harum alias deserunt, possimus nihil veniam repellat esse rerum, rem, voluptatibus maiores culpa enim quaerat perferendis corporis?</p>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Hover Effect</title>
+  <style>
+    .image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: red;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.image-container:hover .overlay {
+  height: 100%;
+}
+
+.content {
+  padding: 20px;
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.image-container:hover .content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+  </style>
+</head>
+<body>
+  <div class="image-container">
+    <img src="rsfimg.jpg" alt="Image">
+    <div class="overlay">
+      <div class="content">
+        <p>Your content goes here</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+<!-- form -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    
+<script>
+    $(document).ready(function(){
+        $("fieldset").hide();
+        $("#slideDown").click(function(){
+           $("fieldset").slideToggle(1000);
+        });        
+});
+</script>
+</head>
+<body>
+    <button id="slideDown">Login</button>
+
+    <fieldset style="width:25%">
+    <center><h2>Login Form</h2>
+        <input type="email" placeholder="Enter Email" id="email"> <br><br>
+        <input type="password" placeholder="Enter Password" id="password"><br> <br>
+        <input type="submit" value="Submit">
+    </center>
+    </fieldset>
+
+</body>
+</html> -->
+

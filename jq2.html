@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body {
+            background-color: #fbfbfb;
+        }
+
+        @media (min-width: 991.98px) {
+            main {
+                padding-left: 240px;
+            }
+        }
+       
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: -250px;
+            padding: 58px 0 0;
+            /* Height of navbar */
+            box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+            width: 240px;
+            z-index: 600;
+            transition: all 0.3s;
+        }
+
+        @media (max-width: 991.98px) {
+            .sidebar {
+                left: -100%;
+            }
+
+            .sidebar.active {
+                left: 0;
+            }
+        }
+
+        .sidebar .active {
+            border-radius: 5px;
+            box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+            /* color: black; */
+        }
+
+        .sidebar-sticky {
+            position: relative;
+            top: 0;
+            height: calc(100vh - 48px);
+            padding-top: 0.5rem;
+            overflow-x: hidden;
+            overflow-y: auto;
+            /* Scrollable contents if viewport is shorter than content. */
+        }
+
+        .sidebar .sidebar-toggler {
+            position: absolute;
+            top: 20px;
+            left: 15px;
+            cursor: pointer;
+        }
+
+        .sidebar .sidebar-toggler i {
+            font-size: 24px;
+            color: white;
+        }
+
+        .sidebar .list-group-item {
+            background-color: transparent;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .main-content {
+            margin-left: 0;
+            transition: all 0.3s;
+        }
+
+        @media (min-width: 991.98px) {
+            .main-content {
+                margin-left: 240px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Sidebar -->
+        <nav id="sidebar" class="sidebar">
+            <div class="sidebar-toggler" onclick="toggleSidebar()">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div class="sidebar-sticky" style="background-color: white;">
+                <div class="list-group list-group-flush mx-3 mt-4">
+                    <a href="#" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+                        <i class="fas fa-tachometer-alt fa-fw me-3"></i><span style="color: black;">Main dashboard</span>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action py-2 ripple ">
+                        <i class="fas fa-chart-area fa-fw me-3"></i><span style="color: black;">Webiste traffic</span>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action py-2 ripple "><i
+                            class="fas fa-lock fa-fw me-3"></i><span style="color: black;">Password</span></a>
+                    <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                            class="fas fa-chart-line fa-fw me-3"></i><span style="color: black;">Analytics</span></a>
+                    <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+                        <i class="fas fa-chart-pie fa-fw me-3"></i><span style="color: black;">SEO</span>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                            class="fas fa-chart-bar fa-fw me-3"></i><span style="color: black;">Orders</span></a>
+                    <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                            class="fas fa-globe fa-fw me-3"></i><span style="color: black;">International</span></a>
+                    <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                            class="fas fa-building fa-fw me-3"></i><span style="color: black;">Partners</span></a>
+                    <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                            class="fas fa-calendar fa-fw me-3"></i><span style="color: black;">Calendar</span></a>
+                    <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                            class="fas fa-users fa-fw me-3"></i><span>Users</span></a>
+                    <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                            class="fas fa-money-bill fa-fw me-3"></i><span>Sales</span></a>
+                </div>
+            </div>
+        </nav>
+        <!-- Sidebar -->
+
+        <!-- Navbar -->
+        <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" onclick="toggleSidebar()">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="25" alt=""
+                        loading="lazy" />
+                </a>
+                <form class="d-none d-md-flex input-group w-auto my-auto">
+                    <input autocomplete="off" type="search" class="form-control rounded"
+                        placeholder='Search (ctrl + "/" to focus)' style="min-width: 225px" />
+                    <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
+                </form>
+                <ul class="navbar-nav ms-auto d-flex flex-row">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#"
+                            id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge rounded-pill badge-notification bg-danger">1</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Some news</a></li>
+                            <li><a class="dropdown-item" href="#">Another news</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-3 me-lg-0" href="#">
+                            <i class="fas fa-fill-drip"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item me-3 me-lg-0">
+                        <a class="nav-link" href="#">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdown"
+                            role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                            <i class="united kingdom flag m-0"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="united kingdom flag"></i>English
+                                    <i class="fa fa-check text-success ms-2"></i></a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="poland flag"></i>Polski</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="china flag"></i>中文</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="japan flag"></i>日本語</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="germany flag"></i>Deutsch</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="france flag"></i>Français</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="spain flag"></i>Español</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="russia flag"></i>Русский</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="portugal flag"></i>Português</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+                            id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
+                                class="rounded-circle" height="22" alt="" loading="lazy" />
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">My profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Navbar -->
+    </header>
+    <main>
+        <div class="container pt-4">
+            <!-- Your content here -->
+            <canvas id="myChart"></canvas>
+        </div>
+    </main>
+    <footer>
+        <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+O8q3D6Ors2aT1l0cC+2g1/CeZzA/J5fet5pG2i5oV5z5e5bB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+        crossorigin="anonymous"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Graph
+        var ctx = document.getElementById("myChart");
+
+        var myChart = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: [
+                    "Sunday",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                ],
+                datasets: [
+                    {
+                        data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+                        lineTension: 0,
+                        backgroundColor: "transparent",
+                        borderColor: "#007bff",
+                        borderWidth: 4,
+                        pointBackgroundColor: "#007bff",
+                    },
+                ],
+            },
+            options: {
+                scales: {
+                    yAxes: [
+                        {
+                            ticks: {
+                                beginAtZero: false,
+                            },
+                        },
+                    ],
+                },
+                legend: {
+                    display: false,
+                },
+            },
+        });
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    
+<script>
+    $(document).ready(function(){
+
+        $("#slideDown").click(function(){
+           $("p").slideDown(3000);
+        });        
+        $("#slideUp").click(function(){
+            $("p").slideUp();
+        });        
+        $("#slideToggle").click(function(){
+            $("p").slideToggle();
+        });        
+
+});
+</script>
+</head>
+<body>
+    <button id="slideDown">Slide Down</button>
+    <button id="slideUp">Slide Up</button>
+    <button id="slideToggle">Slide Toggle</button>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla suscipit a blanditiis provident harum alias deserunt, possimus nihil veniam repellat esse rerum, rem, voluptatibus maiores culpa enim quaerat perferendis corporis?</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla suscipit a blanditiis provident harum alias deserunt, possimus nihil veniam repellat esse rerum, rem, voluptatibus maiores culpa enim quaerat perferendis corporis?</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla suscipit a blanditiis provident harum alias deserunt, possimus nihil veniam repellat esse rerum, rem, voluptatibus maiores culpa enim quaerat perferendis corporis?</p>
+
+</body>
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Responsive Columns</title>
+    <style>
+        .content-box {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .heading {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row" style="width:1260px;">
+        <div class=" col-sm-4 col-lg-4">
+            <div class="content-box">
+                <span class="heading">Heading 1</span>
+                <p>This is the content for column 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <button class="btn btn-primary">Button 1</button>
+            </div>
+        </div>
+        <div class="col-sm-4 col-lg-4">
+            <div class="content-box">
+                <span class="heading">Heading 2</span>
+                <p>This is the content for column 2. Nullam vel lorem nec mi bibendum varius.</p>
+                <button class="btn btn-primary">Button 2</button>
+            </div>
+        </div>
+        <div class="col-sm-4 col-lg-4">
+            <div class="content-box">
+                <span class="heading">Heading 3</span>
+                <p>This is the content for column 3. Vivamus fringilla nisi a metus volutpat, eget tincidunt sapien aliquet.</p>
+                <button class="btn btn-primary">Button 3</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    
+<script>
+    $(document).ready(function(){
+
+        $("#show").click(function(){
+           // $("p").show();
+           $("p").show(3000);
+        });        
+        $("#hide").click(function(){
+            $("p").hide();
+        });        
+        $("#toggle").click(function(){
+            $("p").toggle();
+        });        
+
+});
+</script>
+</head>
+<body>
+    <button id="show">Show</button>
+    <button id="hide">Hide</button>
+    <button id="toggle">Toggle</button>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla suscipit a blanditiis provident harum alias deserunt, possimus nihil veniam repellat esse rerum, rem, voluptatibus maiores culpa enim quaerat perferendis corporis?</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla suscipit a blanditiis provident harum alias deserunt, possimus nihil veniam repellat esse rerum, rem, voluptatibus maiores culpa enim quaerat perferendis corporis?</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla suscipit a blanditiis provident harum alias deserunt, possimus nihil veniam repellat esse rerum, rem, voluptatibus maiores culpa enim quaerat perferendis corporis?</p>
+
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+   <script>
+    $(document).ready(function(){
+        $("#frm").submit(function(){
+            var email = $("#email").val();
+            var reg = /^[0-9A-Za-z_]+@[a-z]+\.[a-z]{2,3}$/;
+            if(reg.test(email)){
+                alert("Email is correct");
+            }
+            else
+                alert("Invalid email");
+        });
+        $("#frm").validate({
+            rules:{
+                username:{required :true},
+                email:{required :true},
+                password:{required :true},
+                contact:{required :true,minlength:10,maxlength:10,digits:"true"},
+                gender:{required :true},
+                hobbies:{required :true},
+                date:{required :true},
+                subject:{required :true},
+                address:{required :true},
+                file:{required :true}
+            },
+            messages:{
+                username:{required:"<span style='color:red'>Username Required</span>"},
+                email:{required:"<span style='color:red'>Email Required</span>"},
+                password:{required:"<span style='color:red'>Password Required</span>"},
+                contact:{required:"<span style='color:red'>Contact Required</span>",minlength:"<span style='color:red'>Needs 10 Digits</span>",digits:"<span style='color:red'>Only Digits are Acceptable</span>"},
+                gender:{required:"<span style='color:red'>Gender Required</span>"},
+                hobbies:{required:"<span style='color:red'>Hobbies Required</span>"},
+                date:{required:"<span style='color:red'>Date Required</span>"},
+                subject:{required:"<span style='color:red'>Subject Required</span>"},
+                address:{required:"<span style='color:red'>Address Required</span>"},
+                file:{required:"<span style='color:red'>Select File</span>"}
+            }
+        });
+    });
+   </script>
+</head>
+<body>
+<form id="frm" action="welcome.html" method="get">
+    <fieldset>
+        <legend align="center"><fieldset>Registration Form</fieldset></legend>
+    <table>
+        <tr>
+            <td><label for="username">Username</label></td>
+            <td>
+                <input   type="text" placeholder="Enter Username" name="username" id="username">
+            </td>
+        </tr>
+        <tr>
+            <td><label>Email</label></td>
+            <td>
+                <input type="email" placeholder="Enter Email" name="email" id="email">
+            </td>
+        </tr>
+        <tr>
+            <td><label>Password</label></td>
+            <td>
+                <input   type="password" placeholder="Enter Password" name="password" id="password">
+            </td>
+        </tr>
+        <tr>
+            <td><label>Contact</label></td>
+            <td>
+                <input   type="text" maxlength="10" placeholder="Enter 10-digit Mobile Number" name="contact" id="contact">
+            </td>
+        </tr>
+        <tr>
+            <td><label>Gender</label></td>
+            <td>
+                <label for="male">Male</label>
+                <input value="male"   type="radio" name="gender" id="male">
+                <br>
+                <label for="female">Female</label>
+                <input value="female" type="radio" name="gender" id="female">
+             </td>
+        </tr>
+        <tr>
+            <td><label>Hobbies</label></td>
+            <td>
+                <label for="cricket">Cricket</label>
+                <input value="cricket" type="checkbox" name="hobbies" id="cricket">
+                <br>
+                <label for="hockey">Hockey</label>
+                <input type="checkbox" value="hockey" name="hobbies" id="hockey">
+                
+            </td>
+        </tr>
+        <tr>
+            <td><label>DOB</label></td>
+            <td>
+                <input   type="date" name="date" id="date">
+            </td>
+        </tr>
+        <tr>
+            <td><label>Subject</label></td>
+            <td>
+                <select name="subject" id="subject">
+                    <!-- <select   name="subject" multiple id="subject"> -->
+
+<option value="">Select Subject</option>
+<option value="C"> C language</option>
+<option value="C++"> C++ language</option>
+<option value="C#"> C# language</option>
+<option value=".net"> .NET language</option>
+</select>
+</td>
+</tr>
+<tr>
+    <td><label>Address</label></td>
+    <td>
+        <textarea name="address" id="address" placeholder="Enter Address"></textarea>
+    </td>
+</tr>
+<tr>
+    <td><label>File Upload</label></td>
+    <td>
+        <input type="file" name="file" id="file">
+    </td>
+</tr>
+<tr>
+    <td></td>
+    <td>
+        <input type="submit" value="Register">
+        <input type="reset" value="Reset">
+
+    </td>
+</tr>
+</table>
+</fieldset>
+</form>
+</body>
+
+</html> -->

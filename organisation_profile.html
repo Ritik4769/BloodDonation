@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+    integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+    integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+    .dropdown-menu {
+      border: none;
+    }
+
+    .navbar-nav {
+      text-align: left;
+    }
+
+    .nav-link {
+      padding: .2rem 1rem;
+    }
+
+    .navbar-toggler {
+      padding: 1px 5px;
+      font-size: 18px;
+      line-height: 0.3;
+    }
+
+    .navbar .container .collapse .navbar-nav .nav-item .nav-link {
+      border: none;
+      color: hsl(0, 85%, 56%);
+      font-size: 14px;
+      padding: 10px;
+      font-family: 'Open Sans';
+      font-weight: bold;
+      border-radius: 12px;
+    }
+
+    .navbar .container .collapse .navbar-nav .nav-item .dropdown-menu .dropdown-item {
+      color: hsl(0, 85%, 56%);
+    }
+
+    .navbar .container .collapse .navbar-nav .nav-item .nav-link:hover {
+      transition: 1s !important;
+      color: white !important;
+      border-radius: 12px;
+      background: rgb(234, 54, 54) !important;
+    }
+  </style>
+
+  <title>Hello, world!</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg m-2 fixed-top"
+    style="background-color: #fff;box-shadow: 0 4px 10px rgb(0, 0, 0,0.4); border-radius: 12px;">
+    <div class="container">
+      <a class="navbar-brand" href="https://reezhdesign.com">
+        <img src="image/blood logo1.jpeg" alt="" style="width: 10%;height: 10%;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+        aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item" style="padding: 10px;">
+            <a class="nav-link" aria-current="page" style="color: rgb(238, 68, 68);font-size: 20px;" href="#">Home</a>
+          </li>
+          <li class="nav-item" style="padding: 10px;">
+            <a class="nav-link" href="#" style="color:  rgb(238, 68, 68);font-size: 20px;">About Us</a>
+          </li>
+          <li class="nav-item dropdown" style="padding: 10px;">
+            <a style="color:  rgb(238, 68, 68);font-size: 20px;" class="nav-link dropdown-toggle" href="#"
+              id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Register
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown"
+              style="border: none;margin-top: 20px;box-shadow: 0 0 10px rgb(48, 36, 36);">
+              <li><a class="dropdown-item" href="#" style="color:  rgb(238, 68, 68);font-size: 20px;">Donor Register</a>
+              </li>
+              <li><a class="dropdown-item" href="#" style="color:  rgb(238, 68, 68);font-size: 20px;">Blood Bank
+                  Register</a></li>
+              <li><a class="dropdown-item" href="#" style="color:  rgb(238, 68, 68);font-size: 20px;">Organization
+                  Register</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown" style="padding: 10px;">
+            <a class="nav-link dropdown-toggle" style="color:  rgb(238, 68, 68);font-size: 20px;" href="#"
+              id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Login
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown"
+              style="border: none;margin-top: 20px;box-shadow: 0 0 10px rgb(48, 36, 36);">
+              <li><a class="dropdown-item" href="#" style="color:  rgb(238, 68, 68);font-size: 20px;">Donor Login</a>
+              </li>
+              <li><a class="dropdown-item" href="#" style="color:  rgb(238, 68, 68);font-size: 20px;">Recipient
+                  Login</a></li>
+              <li><a class="dropdown-item" href="#" style="color:  rgb(238, 68, 68);font-size: 20px;">Blood Bank
+                  Login</a></li>
+              <li><a href="" class="dropdown-item" style="color:  rgb(238, 68, 68);font-size: 20px;">Organization
+                  Login</a></li>
+            </ul>
+          </li>
+          <li class="nav-item " style="padding-left: 25px;padding-top: 15px;">
+            <div class="row" style="box-shadow: 0 0 4px rgb(228, 75, 75);">
+              <div class="col-1">
+                <i class="fa fa-search" style="color:  rgb(238, 68, 68);text-align: center;padding-top: 13px;"></i>
+              </div>
+              <div class="col-7">
+                <input type="text" placeholder="Search blood"
+                  style="border: none;outline: none; padding: 10px; width: 100%;">
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <div class="container-fluid" style="height: 600px; margin-top: 100px;">
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card" style="background: linear-gradient(180deg, rgba(170, 70, 78, 0.75) 0%, rgba(255, 255, 255, 0) 100%);width: 700px;height: 630px;  box-shadow: 0px 10px 10px #ff000080; border-style: none;">
+            <h3 style="position: absolute; margin-top: 5%; margin-left: 5%;">Organization Profile</h3>
+            
+            <div style="width: 340px; height: 400px; background-color: #fff; box-shadow: 0px 10px 10px #fff; border-style: none; margin-top: 17%; margin-left: 5%;">
+                <form  style="margin-top:70px ; ">
+                  
+                    <div class="mb-3">
+                        <center> <p style="display: inline; color: rgb(238, 68, 68);"><b>Blood Source Organization</b></p></center>
+                    </div>
+                    <div class="mb-3">
+                     
+                     <center><p style="display: inline; color: rgb(238, 68, 68); margin-right: 33%;">Janhavi Joshi</p></center> 
+        
+                    </div>
+                    <div class="mb-3">
+                     
+                      <center><p style="display: inline; color: rgb(238, 68, 68);  margin-right: 20%;">Janhavi@gmail.com</p></center>
+                     
+                    </div>
+                    <div class="mb-3">
+                     
+                      <center><p style="display: inline;  color: rgb(238, 68, 68);  margin-right: 35%;">9766138277</p></center>
+                   
+                    </div>
+                    <div class="mb-3">
+                    
+                      <center><p style="display: inline;color: rgb(238, 68, 68);  margin-right: 28%;">Madhya Pradesh</p></center>
+                    
+                    </div>
+                    <div class="mb-3">
+                     
+                     <center><p style="display: inline; color: rgb(238, 68, 68);  margin-right: 45%;">Indore</p></center> 
+                     
+                    </div>
+                    <button type="submit" class="btn btn-primary"  style="margin-left: 15%;margin-top: 5%; background-color:rgba(178, 70, 78,1); border-style: none;">Request for Blood </button>
+                <button type="submit" class="btn btn-primary" style="margin-top: 5%;margin-left: 5%; background-color:rgba(178, 70, 78,1); border-style: none;">Update</button>
+                </form>
+                <div class=" col-mb-6" style="width:250px; height: 250px; background-color: black; position: absolute; display: inline; margin-top: -300px; margin-left: 380px;">
+                    <img src="image/orgimg.png" alt="" style="width: 250px; height: 250px;">
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <footer class=" text-white text-center text-lg-start" style="background: linear-gradient(180deg,rgba(240, 95, 87, 1),rgba(54, 9, 64, 1));">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-12 mb-4 mb-md-0 pt-2">
+            <h5 class="text-uppercase">Nav-Links</h5>
+            
+            <ul class="list-unstyled" style="padding-left: 20px;">
+              <li class="p-2">
+                <a href="#!" class="text-white" style="font-weight: bold;">Home</a>
+              </li>
+              <li class="p-2">
+                <a href="#!" class="text-white" style="font-weight: bold;">About Us</a>
+              </li>
+              <li class="p-2">
+                <a href="#!" class="text-white" style="font-weight: bold;">Login</a>
+              </li>
+              <li class="p-2">
+                <a href="#!" class="text-white" style="font-weight: bold;">Register</a>
+              </li>
+              <li class="p-2">
+                <a href="#!" class="text-white" style="font-weight: bold;">FAQ</a>
+              </li>
+              <li class="p-2">
+                <a href="#!" class="text-white" style="font-weight: bold;">Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+    
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0 pt-2" >
+            <h5 class="text-uppercase">Links</h5>
+    
+            <ul class="list-unstyled">
+              <li class="py-1">
+                <a href="www.facebook.com" class="text-white p-3" >
+                  <i class="fa fa-facebook-square" style="color: white;padding: 10px;font-size: 20px;"> <span style="color: white;font-family: sans-serif;"> www.facebook.com</span></i>
+                </a>
+              </li>
+              <li class="py-1">
+                <a href="www.instagram.com" class="text-white p-3" >
+                  <i class="fa fa-instagram" style="color: white;padding: 10px;font-size: 20px;"> <span style="color: white;font-family: sans-serif;"> www.instagram.com</span></i>
+                </a>
+              </li>
+              <li class="py-1">
+                <a href="www.youtube.com" class="text-white p-3" >
+                  <i class="fa fa-youtube-play" style="color: white;padding: 10px;font-size: 20px;"> <span style="color: white;font-family: sans-serif;"> www.youtube.com</span></i>
+                </a>
+              </li>
+              <li class="py-1">
+                <a href="www.twitter.com" class="text-white p-3" >
+                  <i class="fa fa-twitter" style="color: white;padding: 10px;font-size: 20px;"> <span style="color: white;font-family: sans-serif;"> www.twitter.com</span></i>
+                </a>
+              </li>
+              <li class="py-1">
+                <a href="www.twitter.com" class="text-white p-3" >
+                  <i class="fa fa-telegram" style="color: white;padding: 10px;font-size: 20px;"> <span style="color: white;font-family: sans-serif;"> www.telegram.com</span></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+    
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 pt-2" >
+            <h5 class="text-uppercase mb-3">Connect With Us</h5>
+    
+            <div class="px-4">
+               <p class="text-light h5 py-2" style="font-weight: 400;">Shree Sham,LIG,Indore,
+                Madhya Pradesh </p>
+            </div>
+            <div class="px-4">
+                <h5 class="text-light h5 py-2" style="font-weight: 400;">Contact : 9766138277</h5>
+            </div>
+            <div class="px-4">
+                <h5 class="text-light h5 py-2" style="font-weight: 400;">Email : BDM@gmail.com</h5>
+            </div>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+    
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">Techwizard.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+  </div>
+</body>
+
+</html>
